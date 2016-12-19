@@ -1,0 +1,28 @@
+{
+  "name": "promisify",
+  "version": "1.0.0",
+  "description": "Module to help work in sequencial mode with typeScript thanks to async/await",
+  "main": "./js/index.js",
+  "types": "./js/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garronej/promisify.git"
+  },
+  "keywords": [
+    "typeScript",
+    "await",
+    "async"
+  ],
+  "author": "Joseph Garrone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garronej/promisify/issues"
+  },
+  "homepage": "https://github.com/garronej/promisify#readme",
+  "devDependencies": {
+    "@types/node": "^6.0.52"
+  }
+}

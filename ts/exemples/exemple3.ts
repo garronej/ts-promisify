@@ -1,5 +1,5 @@
 
-import * as promisify from "./promisify";
+import * as promisify from "../index";
 
 
 /*

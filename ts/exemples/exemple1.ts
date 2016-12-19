@@ -1,5 +1,5 @@
 
-import promisify from "./promisify"
+import promisify from "../index"
 
 /*Pas du tout typer*/
 
