@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es2015",
+        "target": "es3",
+        "lib": [
+            "es5",
+            "es2015.promise"
+            ],
         "declaration": true,
         "outDir": "../js"
     },
