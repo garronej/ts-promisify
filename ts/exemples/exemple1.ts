@@ -13,7 +13,7 @@ let myAsync= function(input, callback){
 
         }
 
-        callback(null,"I am not typed" + input.toString());
+        callback(null, "=>" + input.toString() + "<=");
 
     },1000);
 

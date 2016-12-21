@@ -42,7 +42,7 @@ var myAsync = function (input, callback) {
         if (input === 4) {
             return callback(new Error("sample error"));
         }
-        callback(null, "I am not typed" + input.toString());
+        callback(null, "=>" + input.toString() + "<=");
     }, 1000);
 };
 (function () { return __awaiter(_this, void 0, void 0, function () {

@@ -20,12 +20,12 @@ export type AsyncFunction22<I1, I2, O1, O2>= {
 };
 
 
-export function i1o1<I,O>(asyncFunction: AsyncFunction11<I,O>): (input: I) => Promise<O> {
+export function i1o1<I,O>(asyncFunction: AsyncFunction11<I,O>, context?: Object): (input: I) => Promise<O> {
 
     return (input) => {
 
         return new Promise<O>(resolve => {
-            asyncFunction(input, (output)=> resolve(output));
+            asyncFunction.call(context, input, (output)=> resolve(output));
         });
 
     };
@@ -34,12 +34,12 @@ export function i1o1<I,O>(asyncFunction: AsyncFunction11<I,O>): (input: I) => Pr
 
 
 
-export function i1o2<I,O1,O2>(asyncFunction: AsyncFunction12<I, O1, O2>): (input: I) => Promise<[O1,O2]> {
+export function i1o2<I,O1,O2>(asyncFunction: AsyncFunction12<I, O1, O2>, context?: Object): (input: I) => Promise<[O1,O2]> {
 
     return (input) => {
 
         return new Promise<[O1,O2]>(resolve => {
-            asyncFunction(input, (output1, output2)=> resolve([output1, output2]));
+            asyncFunction.call(context, input, (output1, output2)=> resolve([output1, output2]));
         });
 
     };
@@ -47,12 +47,12 @@ export function i1o2<I,O1,O2>(asyncFunction: AsyncFunction12<I, O1, O2>): (input
 };
 
 
-export function i2o1<I1, I2, O>(asyncFunction: AsyncFunction21<I1, I2, O>): (input1: I1, input2: I2) => Promise<O> {
+export function i2o1<I1, I2, O>(asyncFunction: AsyncFunction21<I1, I2, O>, context?: Object): (input1: I1, input2: I2) => Promise<O> {
 
     return (input1, input2) => {
 
         return new Promise<O>(resolve => {
-            asyncFunction(input1, input2, (output)=> resolve(output));
+            asyncFunction.call(context, input1, input2, (output)=> resolve(output));
         });
 
     };
@@ -60,24 +60,24 @@ export function i2o1<I1, I2, O>(asyncFunction: AsyncFunction21<I1, I2, O>): (inp
 };
 
 
-export function i2o2<I1,I2,O1,O2>(asyncFunction: AsyncFunction22<I1,I2,O1,O2>): (input1: I1, input2: I2) => Promise<[O1,O2]> {
+export function i2o2<I1,I2,O1,O2>(asyncFunction: AsyncFunction22<I1,I2,O1,O2>, context?: Object): (input1: I1, input2: I2) => Promise<[O1,O2]> {
 
     return (input1, input2) => {
 
         return new Promise<[O1,O2]>(resolve => {
-            asyncFunction(input1, input2, (output1, output2)=> resolve([output1, output2]));
+            asyncFunction.call(context, input1, input2, (output1, output2)=> resolve([output1, output2]));
         });
 
     };
 
 };
 
-export default function promisify(asyncFunction: Function): (...inputs) => Promise<any[]> {
+export default function promisify(asyncFunction: Function, context?: Object): (...inputs) => Promise<any[]> {
 
     return (...inputs) => {
 
         return new Promise<any[]>(resolve => {
-            asyncFunction.apply(null, inputs.concat([(...outputs) => resolve(outputs)]))
+            asyncFunction.apply(context, inputs.concat([(...outputs) => resolve(outputs)]))
         });
 
     };

@@ -50,3 +50,5 @@ let myAsync= function(input, callback){
 
 ```
 
+See exemple 4 for calling with context
+
