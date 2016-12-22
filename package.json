@@ -23,9 +23,11 @@
     "url": "https://github.com/garronej/promisify/issues"
   },
   "homepage": "https://github.com/garronej/promisify#readme",
-  "devDependencies": {
-    "@types/node": "^6.0.52",
+  "dependencies": {
     "typescript": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.52"
   }
 }
 
