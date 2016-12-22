@@ -7,10 +7,10 @@
             "es2015.promise"
             ],
         "declaration": true,
-        "outDir": "../js"
+        "outDir": "../generatedJs"
     },
     "filesGlob": [
-        "./**/*.ts",
-        "!./node_modules/**/*.ts"
+        "./**/*.ts"
     ]
 }
+
