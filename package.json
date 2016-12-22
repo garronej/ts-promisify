@@ -5,7 +5,8 @@
   "main": "./generatedJs/index.js",
   "types": "./generatedJs/index.d.ts",
   "scripts": {
-          "install": "node ./node_modules/typescript/bin/tsc --project ./ts/tsconfig.json"
+          "install": "node ./node_modules/typescript/bin/tsc --project ./ts/tsconfig.json",
+          "test": "node ./generatedJs/exemples/exemple1"
   },
   "repository": {
     "type": "git",
