@@ -6,7 +6,7 @@
   "types": "./generatedJs/index.d.ts",
   "scripts": {
           "install": "node ./node_modules/typescript/bin/tsc --project ./ts/tsconfig.json",
-          "test": "node ./generatedJs/exemples/exemple1"
+          "test": "node ./generatedJs/exemples/tests"
   },
   "repository": {
     "type": "git",
