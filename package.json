@@ -1,5 +1,5 @@
 {
-  "name": "promisify",
+  "name": "ts-promisify",
   "version": "1.0.0",
   "description": "Module to help work in sequencial mode with typeScript thanks to async/await",
   "main": "./generatedJs/index.js",
@@ -15,7 +15,9 @@
   "keywords": [
     "typeScript",
     "await",
-    "async"
+    "async",
+    "synchronous",
+    "sequential"
   ],
   "author": "Joseph Garrone",
   "license": "ISC",
