@@ -129,11 +129,13 @@ myAsync(1, function (error, output) {
 
 You can bound your async function to a specifics object,
 
-See ts/exemples/test.ts for detailed exemples.
+See *ts/exemples/test.ts* for detailed exemples.
 
 
 
 To run the examples:
 
+````shell
 npm install 
-node ./generatedJs/exemples/tests.js ( or npm test )
+node ./generatedJs/exemples/tests.js
+````
