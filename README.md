@@ -85,6 +85,8 @@ sequentially in an async closure
 
 });
 
+```
+
 The output will be: 
 
 =>1<=
@@ -92,9 +94,10 @@ expected error
 =>3<=
 
 
-/*
+
 The equivalent in a the traditional asyncronous paradigme would be:
-*/
+
+```javaScript
 
 myAsync(1, function (error, output) {
     if (error) {
