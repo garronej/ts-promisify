@@ -89,11 +89,11 @@ sequentially in an async closure
 
 The output will be: 
 
+```shell
 =>1<=
-
 expected error
-
 =>3<=
+```
 
 
 
