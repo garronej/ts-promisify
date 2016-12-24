@@ -129,8 +129,7 @@ myAsync(1, function (error, output) {
 
 You can bound your async function to a specifics object,
 
-See *ts/exemples/test.ts* for detailed exemples.
-
+See *./ts/exemples/test.ts* for detailed exemples.
 
 
 To run the examples:
