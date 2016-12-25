@@ -1,11 +1,12 @@
 {
   "name": "ts-promisify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module to help work in sequencial mode with typeScript thanks to async/await",
   "main": "./generatedJs/index.js",
   "types": "./generatedJs/index.d.ts",
   "scripts": {
-          "install": "node ./node_modules/typescript/bin/tsc --project ./ts/tsconfig.json",
+          "postinstall": "npm run tsc",
+          "tsc": "tsc -p ./ts/tsconfig.json",
           "test": "node ./generatedJs/exemples/tests"
   },
   "repository": {
@@ -26,10 +27,10 @@
   },
   "homepage": "https://github.com/garronej/promisify#readme",
   "dependencies": {
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.4",
+    "@types/node": "^6.0.52"
   },
   "devDependencies": {
-    "@types/node": "^6.0.52"
   }
 }
 
