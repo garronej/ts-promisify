@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garronej/promisify.git"
+    "url": "git+https://github.com/garronej/ts-promisify.git"
   },
   "keywords": [
     "typeScript",
