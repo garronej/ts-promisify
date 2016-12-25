@@ -127,7 +127,9 @@ myAsync(1, function (error, output) {
 
 ```
 
-You can bound your async function to a specifics object,
+You can bound your async function to a specifics object.
+If your callback function is not typed enough use promisify.generic
+instead of promisify._*x*
 
 See *./ts/exemples/test.ts* for detailed exemples.
 

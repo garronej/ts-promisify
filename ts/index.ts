@@ -191,8 +191,8 @@ export function _4(...inputs: any[]): any {
 
 }
 
-export function generic(context: Object, asyncFunction: Function): (...inputs) => Promise<any[]>;
-export function generic(asyncFunction: Function, context?: Object): (...inputs) => Promise<any[]>;
+export function generic(context: Object, asyncFunction: Function): (...inputs) => Promise<void|any|any[]>;
+export function generic(asyncFunction: Function): (...inputs) => Promise<void|any|any[]>;
 export function generic(...inputs: any[]): Function {
 
     return __generic__(inputs);
@@ -218,8 +218,15 @@ function __generic__(inputs: any[]): Function{
 
     return (...inputs) => {
 
-        return new Promise<any[]>(resolve => {
-            asyncFunction.apply(context, inputs.concat([(...outputs) => resolve(outputs)]));
+        return new Promise<void|any|any[]>(resolve => {
+
+            asyncFunction.apply(context, inputs.concat([(...outputs) => {
+
+                if( outputs.length === 0 ) resolve() 
+                else if( outputs.length === 1 ) resolve(outputs[0]) 
+                else resolve(outputs)
+
+            }]));
         });
 
     };

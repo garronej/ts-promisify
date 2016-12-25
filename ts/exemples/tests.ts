@@ -143,6 +143,109 @@ sequentially in an async closure
 
 
 
+    /* unitary tests */
+
+
+    console.log("unitary1");
+
+    let myAsync3 = function (input, callback) {
+
+        setTimeout(() => {
+
+            callback("=>" + input.toString());
+
+        }, 100);
+
+    };
+
+
+    for (let i of [1, 2, 3, 4]) {
+
+
+        let output = <string>await promisify.generic(myAsync3)(i);
+
+        console.log(output);
+
+
+
+    }
+
+    console.log("unitary2");
+
+    let myAsync4 = function (input, callback) {
+
+        setTimeout(() => {
+
+            callback();
+
+        }, 100);
+
+    };
+
+
+    for (let i of [1, 2, 3, 4]) {
+
+
+        await promisify.generic(myAsync4)(i);
+
+        console.log("done");
+
+
+
+    }
+
+
+    console.log("unitary3");
+
+    let myAsync5 = function (input1: number, input2: number, callback: ()=> void ) {
+
+        setTimeout(() => {
+
+            callback();
+
+        }, 100);
+
+    };
+
+
+    for (let i of [1, 2, 3, 4]) {
+
+
+        await promisify._0(myAsync5)(i, i+1);
+
+        console.log("done");
+
+
+
+    }
+
+
+    console.log("unitary4");
+
+    let myAsync6 = function (input1: number, input2: number, callback: (output: string)=> void ) {
+
+        setTimeout(() => {
+
+            callback( input1.toString() + " " + input2.toString() + this.input3);
+
+        }, 100);
+
+    };
+
+
+
+    let context= { "input3": " ras"};
+
+    for (let i of [1, 2, 3, 4]) {
+
+        let output= await promisify._1(context, myAsync6)(i, i+1);
+
+        console.log(output);
+
+
+
+    }
+
 
 
 })();
