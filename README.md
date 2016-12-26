@@ -15,17 +15,17 @@ as if they where synchronous ( as if the result was directly returned and not vi
 
 #Usage:
 
-
 ```javaScript
-
 
 import * as promisify from "promisify";
 
 /*
-Here is a asyncFunction that take a number (e.g. 1 ) in input and return a string (e.g. "=>1<=") after 100ms
+Here is a asyncFunction that take a number (e.g. 1 ) in input 
+and return a string (e.g. "=>1<=") after 100ms
 */
 
-let myAsync = function (input: number, callback: (error: Error, output1: string, output2: string) => void): void {
+let myAsync = function (input: number, 
+callback: (error: Error, output1: string, output2: string) => void): void {
 
     setTimeout(() => {
 
@@ -51,7 +51,6 @@ sequentially in an async closure
 */
 (async () => {
 
-
     for (let i of [1, 2, 3]) {
 
         /*
@@ -68,7 +67,6 @@ sequentially in an async closure
 
         */
 
-
         let [error, output] = await promisify._2(myAsync)(i);
 
         if (error) {
@@ -84,7 +82,6 @@ sequentially in an async closure
     }
 
 });
-
 ```
 
 The output will be: 
@@ -95,12 +92,9 @@ expected error
 =>3<=
 ```
 
-
-
 The equivalent in a the traditional asyncronous paradigme would be:
 
 ```javaScript
-
 myAsync(1, function (error, output) {
     if (error) {
         console.log(error.message);
@@ -122,17 +116,12 @@ myAsync(1, function (error, output) {
         });
     });
 });
-
-
-
 ```
-
 You can bound your async function to a specifics object.
 If your callback function is not typed enough use promisify.generic
 instead of promisify._*x*
 
 See *./ts/exemples/test.ts* for detailed exemples.
-
 
 To run the examples:
 
