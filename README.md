@@ -35,7 +35,7 @@ callback: (error: Error, output1: string, output2: string) => void): void {
 
         }else{
 
-            callback(null, "=>" + input.toString() + "<=", "we will note use this value");
+            callback(null, "=>" + input.toString() + "<=", "useless");
 
         }
 
