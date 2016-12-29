@@ -2,16 +2,15 @@
 
 TypeScript module to program sequentially in node.js 
 
-In javaScript/TypeScrip long running functions does not return the result directly,
-instead we pass a callback with the results when the function is done running.
+In javaScript/TypeScrip long running functions does not return the result directly but via a callback function.
 
-The problem with that is that we end up having a callback in a callback in a callback ... aka callbacks hell
+The problem with that is we end up having a callback in a callback in a callback...
 
 To deal with this problems latest ECMAScript specification define async/await, feature supported by typeScript,
 but you can only 'await' functions that return a Promise.
 
 This module 'promisify' your async function so they can be called
-as if they where synchronous ( as if the result was directly returned and not via a callback ).
+as if they where synchronous ( as if the result was directly returned ).
 
 #Usage:
 
@@ -20,8 +19,8 @@ as if they where synchronous ( as if the result was directly returned and not vi
 import * as promisify from "promisify";
 
 /*
-Here is a asyncFunction that take a number (e.g. 1 ) in input 
-and return a string (e.g. "=>1<=") after 100ms
+Here is a asyncFunction that take a number in input 
+and return a string after 100ms
 */
 
 let myAsync = function (input: number, 
@@ -53,21 +52,8 @@ sequentially in an async closure
 
     for (let i of [1, 2, 3]) {
 
-        /*
 
-        Here we use promisify._2 because we expect two value from the callback.
-
-        If you where only interested by the 'error' you would have wrote: 
-        let error= await promisify._1(myAsync)(i);
-
-        If you where interested by all tree parameters:
-        let [error, output1, output2]= await promisify._3(myAsync)(i);
-
-        promisify._0 to promisify_4 are defined in the module.
-
-        */
-
-        let [error, output] = await promisify._2(myAsync)(i);
+        let [error, output] = await promisify.typed(myAsync)(i);
 
         if (error) {
 
@@ -92,7 +78,7 @@ expected error
 =>3<=
 ```
 
-The equivalent in a the traditional asyncronous paradigme would be:
+The equivalent in a the traditional asynchronous paradigm would be:
 
 ```javaScript
 myAsync(1, function (error, output) {
@@ -118,8 +104,7 @@ myAsync(1, function (error, output) {
 });
 ```
 You can bound your async function to a specifics object.
-If your callback function is not typed enough use promisify.generic
-instead of promisify._*x*
+If your callback function is not typed enough use promisify.generic instead of promisify.typed
 
 See *./ts/exemples/test.ts* for detailed exemples.
 

@@ -90,7 +90,7 @@ sequentially in an async closure
         for (let i of [1, 2, 3, 4]) {
 
 
-            let [error, output] = await promisify._2(obj, obj.myAsync)(i);
+            let [error, output] = await promisify.typed(obj, obj.myAsync)(i);
 
 
 
@@ -142,7 +142,7 @@ sequentially in an async closure
         for (let i of [1, 2, 3, 4]) {
 
 
-            let [error, output] = await promisify._2(myAsync)(i);
+            let [error, output] = await promisify.typed(myAsync)(i);
 
             if (error) {
 
@@ -246,7 +246,7 @@ sequentially in an async closure
         for (let i of [1, 2, 3, 4]) {
 
 
-            await promisify._0(myAsync)(i, i + 1);
+            await promisify.typed(myAsync)(i, i + 1);
 
             console.log("done");
 
@@ -276,7 +276,7 @@ sequentially in an async closure
 
         for (let i of [1, 2, 3, 4]) {
 
-            let [output] = await promisify._1(context, myAsync)(i, i + 1);
+            let [output] = await promisify.typed(context, myAsync)(i, i + 1);
 
             console.log(output);
 
