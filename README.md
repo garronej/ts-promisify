@@ -67,7 +67,7 @@ sequentially in an async closure
 
     }
 
-});
+})();
 ```
 
 The output will be: 
