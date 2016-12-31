@@ -338,5 +338,61 @@ sequentially in an async closure
     } while (false)
 
 
+    do {
+
+        console.log("unitary7");
+
+        let myAsync = function (i1: number, i2: number, i3: number, i4: number, 
+        callback?: (o1: string, o2: string, o3: number, o4: boolean, o5: string, o7: number) => void): void {
+
+            setTimeout(() => {
+
+                callback(i1.toString(), i2.toString(), i3, true, "ok", i4);
+
+            }, 100);
+
+
+        }
+
+        let [o1, o2, o3, o4, o5, o6] = await promisify.typed(myAsync)(1,2,3,4);
+
+        if( o1 === "1" && o2 === "2" && o3 === 3 && o4 === true && o5 === "ok" && o6 === 4){
+            console.log("success");
+        }else{
+            console.log("failed");
+        }
+
+
+    } while (false)
+
+
+    do {
+
+        console.log("unitary8");
+
+        let myAsync = function (i1: number, i2: number, i3: number,
+        callback?: (o1: any, o2: string, o3: any, o4: boolean, o5: string, o7: number) => void): void {
+
+            setTimeout(() => {
+
+                callback(i1.toString(), i2.toString(), i3, true, "ok", 666);
+
+            }, 100);
+
+
+        }
+
+        let [o1, o2, o3, o4, o5] = await promisify.typed(myAsync)(1,2,3);
+
+        if( o1 === "1" && o2 === "2" && o3 === 3 && o4 === true && o5 === "ok"){
+            console.log("success");
+        }else{
+            console.log("failed");
+        }
+
+
+    } while (false)
+
+
 
 })();
