@@ -3,7 +3,9 @@
         "module": "commonjs",
         "target": "es3",
         "lib": [
+            "dom",
             "es5",
+            "scripthost",
             "es2015.promise"
             ],
         "declaration": true,
