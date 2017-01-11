@@ -1,12 +1,12 @@
 {
   "name": "ts-promisify",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Module to help work in sequencial mode with typeScript thanks to async/await",
   "main": "./generatedJs/index.js",
   "types": "./generatedJs/index.d.ts",
   "scripts": {
           "postinstall": "npm run tsc",
-          "tsc": "tsc -p ./ts/tsconfig.json",
+          "tsc": "./node_modules/.bin/tsc -p ./ts/tsconfig.json",
           "test": "node ./generatedJs/exemples/tests"
   },
   "repository": {
