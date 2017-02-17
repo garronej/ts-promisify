@@ -67,14 +67,14 @@ sequentially in an async closure
         /*
         
         You can pass context to the function if you 
-        need you async function to be bind to a specifical 'this'
+        need you async function to be bind to a specific 'this'
         
         */
 
 
         let obj = {
             "prop": "Hello",
-            "myAsync": function (input: number, callback: (error: Error, output: string) => void): void {
+            "myAsync": function (input: number, callback: (error: Error | null, output: string) => void): void {
 
 
                 setTimeout(() => {
@@ -127,7 +127,7 @@ sequentially in an async closure
         */
 
 
-        let myAsync: (input: number, callback: (error: Error, output1: string, output2: string) => void) => void =
+        let myAsync: (input: number, callback: (error: Error | null, output1: string, output2: string) => void) => void =
             function (input, callback) {
 
                 setTimeout(() => {
@@ -291,11 +291,12 @@ sequentially in an async closure
 
         console.log("unitary5");
 
-        let myAsync = function (input: any, callback?: (error: Error, output: string) => void): void {
+        let myAsync = function (input: any, callback?: (error: Error | null, output: string) => void): void {
 
             setTimeout(() => {
 
-                callback(null, "=>" + (<number>input).toString() + "<=");
+                if( callback )
+                    callback(null, "=>" + (<number>input).toString() + "<=");
 
             }, 100);
 
@@ -314,17 +315,18 @@ sequentially in an async closure
         console.log("unitary6");
 
 
-        let myAsync = function (input: any, callback?: (error: Error, output: string) => void): void {
+        let myAsync = function (input: any, callback?: (error: Error | null, output: string) => void): void {
 
             setTimeout(() => {
 
-                callback.call(this, null);
+                if( callback )
+                    callback.call(this, null);
 
             }, 100);
 
         }
 
-        let [error, output] = <[Error, string]>await promisify.generic(null, myAsync)(666);
+        let [error, output] = <[Error, string]>await promisify.generic({}, myAsync)(666);
         
         if( !error && output === undefined  ){
 
@@ -347,7 +349,8 @@ sequentially in an async closure
 
             setTimeout(() => {
 
-                callback(i1.toString(), i2.toString(), i3, true, "ok", i4);
+                if( callback )
+                    callback(i1.toString(), i2.toString(), i3, true, "ok", i4);
 
             }, 100);
 
@@ -375,7 +378,8 @@ sequentially in an async closure
 
             setTimeout(() => {
 
-                callback(i1.toString(), i2.toString(), i3, true, "ok", 666);
+                if( callback )
+                    callback(i1.toString(), i2.toString(), i3, true, "ok", 666);
 
             }, 100);
 

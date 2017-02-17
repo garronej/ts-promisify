@@ -1,7 +1,7 @@
 {
   "name": "ts-promisify",
-  "version": "2.1.2",
-  "description": "Module to help work in sequencial mode with typeScript thanks to async/await",
+  "version": "2.2.0",
+  "description": "Module to help work in sequential mode with typeScript thanks to async/await",
   "main": "./generatedJs/index.js",
   "types": "./generatedJs/index.d.ts",
   "scripts": {

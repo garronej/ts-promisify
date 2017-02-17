@@ -9,7 +9,8 @@
             "es2015.promise"
             ],
         "declaration": true,
-        "outDir": "../generatedJs"
+        "outDir": "../generatedJs",
+        "strictNullChecks": true
     },
     "filesGlob": [
         "./**/*.ts"
