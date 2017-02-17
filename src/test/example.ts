@@ -1,4 +1,4 @@
-import * as promisify from "../index";
+import * as promisify from "../lib/index";
 
 /*
 Your have to be in an async function to use await

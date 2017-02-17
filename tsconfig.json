@@ -9,11 +9,11 @@
             "es2015.promise"
             ],
         "declaration": true,
-        "outDir": "../generatedJs",
+        "outDir": "./out",
         "strictNullChecks": true
     },
     "filesGlob": [
-        "./**/*.ts"
+        "./src/**/*.ts"
     ]
 }
 

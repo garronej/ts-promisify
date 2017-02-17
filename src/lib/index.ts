@@ -1,21 +1,21 @@
 export type AsyncFunction0<O1, O2, O3, O4, O5, O6>= {
-    (callback: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
+    (callback?: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
 };
 
 export type AsyncFunction1<I, O1, O2, O3, O4, O5, O6>= {
-    (i: I, callback: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
+    (i: I, callback?: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
 };
 
 export type AsyncFunction2<I1, I2, O1, O2, O3, O4, O5, O6>= {
-    (i1: I1, i2: I2, callback: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
+    (i1: I1, i2: I2, callback?: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
 };
 
 export type AsyncFunction3<I1, I2, I3, O1, O2, O3, O4, O5, O6> = {
-    (i1: I1, i2: I2, i3: I3, callback: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6) => void): void;
+    (i1: I1, i2: I2, i3: I3, callback?: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6) => void): void;
 };
 
 export type AsyncFunction4<I1, I2, I3, I4, O1, O2, O3, O4, O5, O6> = {
-    (i1: I1, i2: I2, i3: I3, i4: I4, callback: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6) => void): void;
+    (i1: I1, i2: I2, i3: I3, i4: I4, callback?: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6) => void): void;
 };
 
 export function typed<O1,O2,O3,O4,O5,O6>(af:AsyncFunction0<O1,O2,O3,O4,O5,O6>):()=>Promise<[O1,O2,O3,O4,O5,O6]>;
