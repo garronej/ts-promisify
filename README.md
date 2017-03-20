@@ -108,10 +108,3 @@ If your function is overloaded or not typed precisely enough
 use promisify.generic instead of promisify.typed.
 
 See *./src/test/example.ts* for detailed exemples.
-
-To run the examples:
-
-````shell
-npm install 
-node ./generatedJs/exemples/tests.js
-````
