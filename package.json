@@ -1,13 +1,12 @@
 {
   "name": "ts-promisify",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Module to help work in sequential mode with typeScript thanks to async/await",
-  "main": "./out/lib/index.js",
-  "types": "./out/lib/index.d.ts",
+  "main": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
   "scripts": {
-    "postinstall": "npm run tsc",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
-    "test": "node ./out/test/index"
+    "test": "node ./dist/test/index"
   },
   "repository": {
     "type": "git",
@@ -27,10 +26,11 @@
   },
   "homepage": "https://github.com/garronej/promisify#readme",
   "dependencies": {
+  },
+  "devDependencies": {
     "@types/colors": "^1.1.1",
     "@types/node": "^6.0.52",
     "colors": "^1.1.2",
     "typescript": "^2.1.4"
-  },
-  "devDependencies": {}
+  }
 }
