@@ -104,13 +104,7 @@ myAsync(1, function (error, output) {
 });
 ```
 You can bound your async function to a specifics object.
-If your callback function is not typed enough use promisify.generic instead of promisify.typed
+If your function is overloaded or not typed precisely enough
+use promisify.generic instead of promisify.typed.
 
-See *./ts/exemples/test.ts* for detailed exemples.
-
-To run the examples:
-
-````shell
-npm install 
-node ./generatedJs/exemples/tests.js
-````
+See *./src/test/example.ts* for detailed exemples.
