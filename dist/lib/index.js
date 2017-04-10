@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+require("rejection-tracker")(__dirname, "..", "..");
 function typed() {
     var inputs = [];
     for (var _i = 0; _i < arguments.length; _i++) {

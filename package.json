@@ -1,6 +1,6 @@
 {
   "name": "ts-promisify",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "Module to help work in sequential mode with typeScript thanks to async/await",
   "main": "./dist/lib/index.js",
   "types": "./dist/lib/index.d.ts",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/garronej/promisify#readme",
   "dependencies": {
+    "rejection-tracker": "garronej/rejection-tracker"
   },
   "devDependencies": {
     "@types/colors": "^1.1.1",

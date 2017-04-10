@@ -1,3 +1,5 @@
+require("rejection-tracker")(__dirname, "..", "..");
+
 export type AsyncFunction0<O1, O2, O3, O4, O5, O6>= {
     (callback?: (o1: O1, o2: O2, o3: O3, o4: O4, o5: O5, o6: O6)=>void): void;
 };
