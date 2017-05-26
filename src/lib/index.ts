@@ -24,7 +24,7 @@ export function typed<O1,O2,O3,O4,O5,O6>(af:AsyncFunction0<O1,O2,O3,O4,O5,O6>):(
 export function typed<O1,O2,O3,O4,O5,O6>(c:Object,af:AsyncFunction0<O1,O2,O3,O4,O5,O6>):()=>Promise<[O1,O2,O3,O4,O5,O6]>;
 export function typed<I,O1,O2,O3,O4,O5,O6>(af:AsyncFunction1<I,O1,O2,O3,O4,O5,O6>):(i:I)=>Promise<[O1,O2,O3,O4,O5,O6]>;
 export function typed<I,O1,O2,O3,O4,O5,O6>(c:Object,af:AsyncFunction1<I,O1,O2,O3,O4,O5,O6>):(i:I)=>Promise<[O1,O2,O3,O4,O5,O6]>;
-export function typed<I1,I2,O1,O2,O3,O4,O5,O6>(af:AsyncFunction2<I1,I2,O1,O2,O3,O4,O5,O6>):(i1:I1,i2:I2)=>Promise<[O1,O2,O3,O3,O4,O5,O6]>;
+export function typed<I1,I2,O1,O2,O3,O4,O5,O6>(af:AsyncFunction2<I1,I2,O1,O2,O3,O4,O5,O6>):(i1:I1,i2:I2)=>Promise<[O1,O2,O3,O4,O5,O6]>;
 export function typed<I1,I2,O1,O2,O3,O4,O5,O6>(c:Object,af:AsyncFunction2<I1,I2,O1,O2,O3,O4,O5,O6>):(i1:I1,i2:I2)=>Promise<[O1,O2,O3,O4,O5,O6]>;
 export function typed<I1,I2,I3,O1,O2,O3,O4,O5,O6>(af:AsyncFunction3<I1,I2,I3,O1,O2,O3,O4,O5,O6>):(i1:I1,i2:I2,i3:I3)=>Promise<[O1,O2,O3,O4,O5,O6]>;
 export function typed<I1,I2,I3,O1,O2,O3,O4,O5,O6>(c:Object,af:AsyncFunction3<I1,I2,I3,O1,O2,O3,O4,O5,O6>):(i1:I1,i2:I2,i3:I3)=>Promise<[O1,O2,O3,O4,O5,O6]>;
