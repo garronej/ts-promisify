@@ -1,5 +1,4 @@
 "use strict";
-exports.__esModule = true;
 require("rejection-tracker")(__dirname, "..", "..");
 function typed() {
     var inputs = [];

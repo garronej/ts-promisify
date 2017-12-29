@@ -32,6 +32,6 @@
     "@types/colors": "^1.1.1",
     "@types/node": "^6.0.52",
     "colors": "^1.1.2",
-    "typescript": "^2.1.4"
+    "typescript": "2.1.4"
   }
 }

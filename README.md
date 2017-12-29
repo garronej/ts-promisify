@@ -1,5 +1,9 @@
 # ts-promisify
 
+IMPORTANT NOTE:
+I now beleve that the process of promisifiying functions should be left to the 
+developer and not handled by a module.
+
 TypeScript module to program sequentially in node.js 
 
 In javaScript/TypeScrip long running functions does not return the result directly but via a callback function.
