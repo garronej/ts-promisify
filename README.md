@@ -1,8 +1,13 @@
 # ts-promisify
 
+Node.js since v8 provide a promisify function in "util" package see: 
+https://nodejs.org/api/util.html#util_util_promisify_original
+
 IMPORTANT NOTE:
 I now beleve that the process of promisifiying functions should be left to the 
 developer and not handled by a module.
+
+
 
 TypeScript module to program sequentially in node.js 
 
@@ -20,7 +25,7 @@ as if they where synchronous ( as if the result was directly returned ).
 
 ```javaScript
 
-import * as promisify from "promisify";
+import * as promisify from "ts-promisify";
 
 /*
 Here is a asyncFunction that take a number in input 
